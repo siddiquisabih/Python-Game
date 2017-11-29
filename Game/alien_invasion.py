@@ -1,7 +1,7 @@
-import sys
 import  pygame
 from Settings import  Setting
 from Ship import Ship
+import  game_function as gf
 
 def runGame():
 
@@ -24,14 +24,10 @@ def runGame():
 
     # Watch for keyboard and mouse events.
 
-      for event in pygame.event.get():
+     gf.check_event()
+     gf.update_screen(gameSetting , screen , ship)
 
-          if event.type == pygame.QUIT:
-              sys.exit()
 
-      screen.fill(gameSetting.bg_color)
-      ship.blitme()
-      pygame.display.flip()
 
 
 
